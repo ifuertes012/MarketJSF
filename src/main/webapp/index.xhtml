@@ -3,17 +3,15 @@
  	xmlns:h="jakarta.faces.html"
 	xmlns:f="jakarta.faces.core"
  	xmlns:ui="jakarta.faces.facelets">
-<ui:composition>
 <f:view>
 <h:head>
-	<title> JavaServer Faces aplikazioa </title>
-	<h:outputStylesheet library="css" name="style.css" />
+	<title> Market JSF </title>
 </h:head>
 <h:body>
-<h:form>
-	<h3> Pirata, ezin zara sartu!. </h3>
-</h:form>
+	<h:form>
+		<h:commandButton value="Eskaintza sortu" action="EskaintzaSortu" />
+		<h:commandButton value="Eskaintzak kontsultatu" action="EskaintzakKontsultatu" />
+	</h:form>
 </h:body>
 </f:view>
-</ui:composition>
 </html>
