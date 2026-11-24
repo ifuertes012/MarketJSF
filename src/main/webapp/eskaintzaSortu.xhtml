@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core" xmlns:p="primefaces"
+	xmlns:ui="jakarta.faces.facelets">
+
+<h:head>
+	<title>Sortu Eskaintza</title>
+</h:head>
+
+<h:body>
+	<h3>Sortu Eskaintza</h3>
+
+	<h:form>
+
+		<p class="form-group">
+			<h:outputLabel for="izena" value="Tituloa" />
+			<h:inputText id="izena" value="#{eskaintza.izena}" required="true" requiredMessage="Sartu izena" />
+		</p>
+
+		<p class="form-group">
+			<h:outputLabel for="deskribapena" value="Deskribapena" />
+			<h:inputText id="deskribapena" value="#{eskaintza.deskribapena}" required="true" requiredMessage="Sartu deskribapena"/>
+		</p>
+
+		<p class="form-group">
+			<h:outputLabel for="prezioa" value="Prezioa" />
+			<h:inputText id="prezioa" value="#{eskaintza.prezioa}" required="true" />
+		</p>
+
+		<p class="form-group">
+			<h:outputLabel for="egoera" value="Egoera" />
+			<h:selectOneMenu id="egoera" value="#{eskaintza.egoera}">
+				<f:selectItem itemValue="1" itemLabel="Berria" />
+				<f:selectItem itemValue="2" itemLabel="Erabilita" />
+				<f:selectItem itemValue="3" itemLabel="Oso erabilita" />
+			</h:selectOneMenu>
+		</p>
+
+		<p class="form-group">
+			<h:outputLabel for="email" value="Email" />
+			<h:inputText id="email" value="#{eskaintza.email}" required="true" requiredMessage="Sartu emaila" />
+		</p>
+
+		<p class="form-group">
+			<h:outputLabel for="data" value="Data" />
+			<h:inputText id="data" value="#{eskaintza.data}" required="true" requiredMessage="Sartu data bat">
+				<f:passThroughAttribute name="type" value="date" />
+			</h:inputText>
+		</p>
+		
+		<h:commandButton value="Sortu" action="#{eskaintza.sortuEskaintza}" />
+		
+		<h:messages />
+	</h:form>
+	<h:form>
+		<h:commandButton value="Atzera" action="index" />
+	</h:form>
+</h:body>
+</html>

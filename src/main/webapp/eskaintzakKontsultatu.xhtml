@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core" xmlns:p="primefaces"
+	xmlns:ui="jakarta.faces.facelets">
+<h:head>
+	<title>Eskaintzak Kontsultatu</title>
+</h:head>
+<h:body>
+	<h3>Kontsultatu</h3>
+	<h:form>
+		<h:inputText id="bilatu" value="#{eskaintza.bilatu}" />
+		<h:commandButton value="Bilatu" action="#{eskaintza.kontsultatuEskaintza}" />
+		
+		<h:dataTable id="eskaintzakTaula" value="#{eskaintza.eskaintzak}"
+			var="s" border="1" cellpadding="5" cellspacing="0">
+			<h:column>
+				<f:facet name="header">Tituloa</f:facet>
+				<h:outputText value="#{s.title}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Deskribapena</f:facet>
+				<h:outputText value="#{s.description}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Prezioa</f:facet>
+				<h:outputText value="#{s.price}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Egoera</f:facet>
+				<h:outputText value="#{s.status}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Data</f:facet>
+				<h:outputText value="#{s.publicationDate}" />
+			</h:column>
+		</h:dataTable>
+		
+		<h:button value="Atzera" outcome="index" />
+		
+		<h:messages />
+	</h:form>
+</h:body>
+</html>
